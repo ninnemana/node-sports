@@ -1,0 +1,94 @@
+
+
+<!-- Left Nav -->
+<link media="all" rel="Stylesheet" href="/css/category.css" />
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span3">
+            <h3><%= cat.catTitle.trim() %></h3>
+            <% if(cat.sub_categories !== undefined){ %>
+                <ul class="nav nav-list">
+                    
+                <% cat.sub_categories.forEach(function(sub){ %>
+                    <li class="nav-header <%= sub.catID == selected_cat ? 'active' : '' %>">
+                        <a href="/category/<%= sub.catID %>" id="<%= sub.catID %>" class="subCatLabel active">
+                            <%= sub.catTitle.trim() %>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <% if(sub.sub_categories != undefined){ 
+                        sub.sub_categories.forEach(function(last){ %>
+                            <li class="<%= last.catID == selected_cat ? 'active' : '' %>">
+                                <a href="/category/<%= last.catID %>" class="subCatLink" id="<%last.catID %>">
+                                    <%= last.catTitle %>
+                                </a>
+                            </li>
+                    <% })
+                    }
+                }) 
+            } %>
+        </div>
+        <div class="span9">
+            <div id="itemContent">
+                <div class="itemList catDesc" id="sub_0">
+                    <h3><%= cat.catTitle.trim() %></h3>
+                    <div class="catContent">
+                        
+                        <% cat.content.forEach(function(content){ 
+                            if(content.type == 'CategoryBrief'){ %>
+                                <%- content.content %>
+                            <% }
+                         }) %>
+                    </div>
+                </div>
+                <div class="itemList">
+                    <% cat.parts.forEach(function(item){ %>
+                        <div class="item">
+                            <h4><%= item.shortDesc%></h4>
+                            <div class="titleImage">
+                                <img src="http://graphics.curthitch.biz/masterlibrary/<%= item.partID %>/images/<%= item.partID %>_300x225_a.jpg" width="75" />
+                            </div>
+                            <div class="itemParams">
+                                <ul>
+                                    <% item.attributes.forEach(function(attr) { %>
+                                        <li>
+                                            <strong><%= attr.key %>: </strong><%= attr.value %>
+                                        </li>
+                                    <% }) %>
+                                </ul>
+                            </div>
+                            <div class="purchase">
+                                <span class="price"><%= item.listPrice %></span>
+                                <form action="http://www.sportsmansguide.com/net/LinkShare/LinkShareReturn.aspx?encurl=CURTMFG" method="post">
+                                    <input type="hidden" name="vendor_id" value="6061" />
+                                    <input type="hidden" name="event" value="trends" />
+                                    <input type="hidden" name="productCode_01" value="<%= item.partID %>" />
+                                    <input type="hidden" name="shortDescription_01" value="<%= item.shortDesc %>" />
+                                    <input type="hidden" name="item_01" value="" />
+                                    <input type="hidden" name="unitPrice_01" value="<%= item.listPrice %>" />
+                                    <label>Select Qty</label>
+                                    <input type="text" name="qty_01" class="qtyBox" placeholder="0" /><br />
+                                    <input type="image" src="/img/buyNow.png" />
+                                </form>
+                            </div>
+                            <div style="clear:both"></div>
+                        </div>
+                    <% }) %>
+                </div>
+                <% if(show_next || page > 1){ %>
+                    <ul class="pager">
+                        <% if(page > 1){ %>
+                            <li>
+                                <a href="/category/<%= selected_cat %>/parts/<%= page - 1 %>/<%= count %>">Previous</a>
+                            </li>
+                        <% }
+                        if(show_next){ %>
+                            <li>
+                                <a href="/category/<%= selected_cat %>/parts/<%= page + 1 %>/<%= count %>">Next</a>
+                            </li>
+                        <% }
+                 } %>
+            </div>
+        </div>
+    </div>
+<div>

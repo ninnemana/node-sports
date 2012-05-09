@@ -1,0 +1,215 @@
+/* 
+    Document   : master.css
+    Created on : Nov 16, 2010, 10:18:55 AM
+    Author     : Aninneman
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+body { 
+    margin: 0px;
+    padding: 0px;
+    background: #999999;
+    font-family: Arial, 'Times New Roman', Verdana, 'MS Sans Serif';
+}
+
+img{
+    border: none;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+#main{
+    width: 800px;
+    height: 100%;
+    min-height: 800px;
+    background: #fff;
+    margin:auto;
+    border-top: 10px solid #e44f31;
+}
+
+#main #header, #content .article{
+    background: #2c2e2b;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0d0d0d), to(#2c2e2b));
+    background: -moz-linear-gradient(top, #0d0d0d, #2c2e2b);
+    background: -o-gradient(linear, 0% 0%, 0% 100%, from(#0d0d0d), to(#2c2e2b));
+    background: gradient(linear, 0% 0%, 0% 100%, from(#0d0d0d), to(#2c2e2b));
+    /* For Internet Explorer 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#0d0d0d, endColorstr=#2c2e2b);
+
+    /* For Internet Explorer 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#0d0d0d, endColorstr=#2c2e2b)";
+}
+
+#main #header #logo{
+    float:left;
+}
+
+#main #header #logo img{
+    width: 500px;
+}
+
+#main #header #lookup{
+    float:right;
+    margin-right: 10px;
+    background: #e44f31;
+    padding: 0px 20px 5px 20px;
+    margin-bottom: 15px;
+    margin-top: 2px;
+    border-radius: 5px 5px;
+    -moz-border-radius: 5px 5px;
+    -webkit-border-radius: 5px 5px;
+    -o-border-radius: 5px 5px;
+    background: #e44f31;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e44f31), to(#923a15));
+    background: -moz-linear-gradient(top, #e44f31, #923a15);
+    background: -o-gradient(linear, 0% 0%, 0% 100%, from(#e44f31), to(#923a15));
+    background: gradient(linear, 0% 0%, 0% 100%, from(#e44f31), to(#923a15));
+    /* For Internet Explorer 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#e44f31, endColorstr=#923a15);
+    /* For Internet Explorer 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#e44f31, endColorstr=#923a15)";
+
+    border:1px solid black;
+    border-top: none;
+    width: 200px;
+    height: 200px;
+}
+
+#main #header #lookup h2{
+    color: white;
+    font-size: 10pt;
+    margin-bottom: 0px;
+}
+
+#main #header #lookup select{
+    display:block;
+    width: 180px;
+    margin-bottom: 5px;
+    border-radius: 3px 3px;
+    -webkit-border-radius: 3px 3px;
+    -moz-border-radius: 3px 3px;
+    -o-border-radius: 3px 3px;
+    border: none;
+    height: 20px;
+    line-height: 20px;
+}
+
+#main #header #lookup input[type=image]{
+    margin-left: 110px;
+}
+
+#hitchInfo_link
+{
+    background: #2c2e2b;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0d0d0d), to(#2c2e2b));
+    background: -moz-linear-gradient(top, #0d0d0d, #2c2e2b);
+    background: -o-gradient(linear, 0% 0%, 0% 100%, from(#0d0d0d), to(#2c2e2b));
+    background: gradient(linear, 0% 0%, 0% 100%, from(#0d0d0d), to(#2c2e2b));
+    /* For Internet Explorer 5.5 - 7 */
+    filter: #2c2e2b;
+
+    /* For Internet Explorer 8 */
+    -ms-filter: #2c2e2b;
+    border: 2px outset #e44f31;
+    width: 205px;
+    float:right;
+    margin-top: 20px;
+    margin-right: 20px;
+    height: 78px;
+    border-radius: 3px 3px;
+    -moz-border-radius: 3px 3px;
+    -webkit-border-radius: 3px 3px;
+    -o-border-radius: 3px 3px;
+    box-shadow: 2px 2px 2px #2c2e2b;
+    -webkit-box-shadow: 2px 2px 2px #2c2e2b;
+    -moz-box-shadow: 2px 2px 2px #2c2e2b;
+    -o-box-shadow: 2px 2px 2px #2c2e2b;
+}
+
+#content{
+    margin:auto;
+    padding-bottom: 100px;
+}
+
+#content .article{
+    margin: 20px 10px;
+    display: inline-block;
+    text-align: left;
+    min-height: 243px;
+    padding-right: 5px;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+#content .article:hover{
+    text-shadow:none;
+    text-decoration:none;
+    color: white;
+}
+
+#content .article .corner{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 5;
+    width: 32px;
+    height: 32px;
+}
+
+#content .article .lifestyleImg{
+    position: relative;
+    top: -32px;
+    left: 5px;
+    z-index: 3;
+    width: 230px;
+    margin-right: 5px;
+    height: 188px;
+    background: white;
+    -webkit-transform: scale(0.95);
+    -moz-transform: scale(0.95);
+    -o-transfrom: scale(0.95);
+    transform: scale(0.95);
+}
+
+#content .article .lifestyleImg:hover{
+    -webkit-transform: scale(1.0);
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: scale(1.0);
+    -moz-transform: rotate(-3deg);
+    -o-transform: scale(1.0);
+    -o-transform: rotate(-3deg);
+    transform: scale(1.0);
+    transform: rotate(-3deg);
+}
+
+#content .article .lifestyleImg img
+{
+    height: 188px;
+    width: 230px;
+}
+
+#content .article span{
+    top: -27px;
+    position: relative;
+    color: white;
+    font-size: 12pt;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+#content .article:last{
+    text-align:left;
+}
+
+.spinner{
+    display: none;
+    float:left;
+    margin-left: 5px;
+    margin-top: 3px;
+    width: 15px;
+}
+

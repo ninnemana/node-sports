@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title><%= title %></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link media="all" href="/css/bootstrap.css" rel="stylesheet">
+        <link media="all" href="/css/bootstrap-responsive.css" rel="stylesheet">
+        <link media="all" rel="stylesheet" href="/css/master.css" />
+        <link media="all" rel="stylesheet" href="/css/shadowbox.css" />
+    </head>
+    <body>
+        <div id="main">
+            <div id="header">
+                <a id="logo" href="/">
+                    <img src="/img/curtLogo_onBlack.png" alt="CURT Manufacturing" />
+                </a>
+
+                <div id="hitchInfo_link">
+                    <a href="/HitchInfo" target="_blank" title="Towing 101" rel="shadowbox">
+                        <img src="/img/Towing-101.png" style="width: 205px;" />
+                    </a>
+                </div>
+                <div style="clear:both"></div>
+                <div id="lookup">
+                    <h2>Quick Hitch &amp; Wiring Lookup</h2>
+                    <form action="/lookup" method="post">
+                        <select name="mount" id="mount">
+                            <option value="0">- Select Mount -</option>
+                            <option>Front Mount</option>
+                            <option>Rear Mount</option>
+                        </select>
+                        <select name="year" id="year" disabled="disabled">
+                            <option value="0">- Select Year -</option>
+                        </select><img src="/img/ajax-spinner.gif" class="spinner" id="loaderYear" />
+                        <select name="make" id="make" disabled="disabled">
+                            <option value="0">- Select Make -</option>
+                        </select><img src="/img/ajax-spinner.gif" class="spinner" id="loaderMake" />
+                        <select name="model" id="model" disabled="disabled">
+                            <option value="0">- Select Model -</option>
+                        </select><img src="/img/ajax-spinner.gif" class="spinner" id="loaderModel" />
+                        <select name="style" id="style" disabled="disabled">
+                            <option value="0">- Select Style -</option>
+                        </select><img src="/img/ajax-spinner.gif" class="spinner" id="loaderStyle" />
+                        <input type="image" disabled="disabled" alt="Search" name="btnSearch" id="btnSearch" src="/img/btnSearch.jpg" />
+                    </form>
+                </div>
+                <img src="/img/home_BringIt_scaled.jpg" style="float:left;width:530px;margin-left: 10px;margin-top: 5px" />
+                <div style="clear:both"></div>
+                <div style="margin:auto;width: 100%;text-align:center;padding-bottom:5px">
+                    <% catList.forEach(function(catLink){ %>
+                        <a href="/category/<%= catLink.catID %>">
+                            <img src="/img/tabs/<%= catLink.catTitle.toLowerCase().trim().replace(' ', '') %>_tab.png" style="margin-right: 1px;width: 94px" />
+                        </a>
+                    <% }) %>
+                </div>
+            </div>
+            
+            <!-- Categories -->
+            <div id="content">
+                <%- body %>
+            </div>
+            
+            
+            
+        </div>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/lookup.js"></script>
+        <script type="text/javascript" src="/js/shadowbox.js"></script>
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                Shadowbox.init();
+            });
+        </script>
+    </body>
+</html>

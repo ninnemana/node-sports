@@ -1,0 +1,202 @@
+﻿.nav-list li a{
+    font-size: 12px;
+}
+
+.nav-list li.nav-header a{
+    color: #999;
+    font-size: 13px;
+    text-shadow:0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+
+
+#subNav
+{
+    float: left;
+    width: 20%;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 50px;
+}
+
+#subNav h3:hover
+{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#subNav a
+{
+    color: Black;
+    text-decoration: none;
+    font-size: 8pt;
+    display: block;
+    padding: 3px 10px;
+}
+
+#subNav a:hover, #subNav a.active
+{
+    text-decoration: underline;
+    background: #ccc;
+}
+
+#subNav .subCatLabel
+{
+    color: Black;
+    font-size: 10pt;
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+    padding: 10px 5px;
+}
+
+#subNav .subCatLabel:hover
+{
+    text-decoration: underline;
+    background-color: #999;
+    cursor: pointer;
+}
+
+#itemContent
+{
+    border-left: 1px solid #ccc;
+}
+
+#itemContent .itemList .item
+{
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ccc;
+    padding-left: 20px;
+    padding-bottom: 15px;
+}
+
+
+#itemContent .catDesc .catContent
+{
+    padding-left: 25px;   
+}
+
+#itemContent .itemList h3
+{
+    padding-left: 10px;
+    font-weight: normal;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+#itemContent .itemList .item:last-child
+{
+    border-bottom: none;
+}
+
+#itemContent .itemList .item .titleImage
+{
+    float:left;
+}
+    
+#itemContent .itemList .item .titleImage img
+{
+    width: 150px;
+    border: 2px solid #999;
+    border-radius: 5px 5px;
+    -webkit-box-shadow: 3px 3px 3px #ccc;
+}
+
+#itemContent .itemList .item .itemParams
+{
+    float:left;
+    width: 50%;
+    padding-right: 10px;
+}
+
+#itemContent .itemList .item .purchase
+{
+    float:left;
+}
+
+#itemContent .itemList .item .purchase input[type=text]
+{
+    width: 15px;
+    border: 1px solid #727270;
+    padding: 5px;
+    border-radius: 3px 3px;
+    -moz-border-radius: 3px 3px;
+    -o-border-radius: 3px 3px;
+}
+
+.price
+{
+    color: #e44f31;
+    font-weight: bolder;
+    font-size: 14pt;
+}
+
+.catBox
+{
+    width: 130px;
+    float:left;
+    margin: 15px;
+    height: 160px;
+    cursor: pointer;
+    padding-left: 5px;
+    background: #2c2e2b;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0d0d0d), to(#2c2e2b));
+    background: -moz-linear-gradient(top, #0d0d0d, #2c2e2b);
+    background: -o-gradient(linear, 0% 0%, 0% 100%, from(#0d0d0d), to(#2c2e2b));
+    background: gradient(linear, 0% 0%, 0% 100%, from(#0d0d0d), to(#2c2e2b));
+    /* For Internet Explorer 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#0d0d0d, endColorstr=#2c2e2b);
+
+    /* For Internet Explorer 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#0d0d0d, endColorstr=#2c2e2b)";
+}
+
+.catBox .catImageBox
+{
+    height: 66px;
+    line-height: 66px;
+    vertical-align: middle;
+    margin: auto;
+    text-align: center;
+    width: auto;
+    margin-top: 5px;
+}
+
+.catBox .catImageBox img
+{
+    -webkit-transform: scale(0.95);
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+}
+
+.catBox .catImageBox img:hover
+{
+    -webkit-transform: scale(1.0);   
+}
+
+.catBox span
+{
+    color: White;
+    font-weight: bold;
+    font-size: 10pt;
+    display: block;
+    position: relative;
+    top: 40px;
+}
+
+table
+{
+    width: 100%;
+}
+
+table tbody tr td:nth-child(3)
+{
+    text-align: center;
+}
+
+.dataTables_wrapper
+{
+    margin-bottom: 30px;
+}

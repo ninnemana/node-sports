@@ -1,0 +1,57 @@
+<!-- Left Nav -->
+<link media="all" rel="Stylesheet" href="/css/category.css" />
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span3">
+            <h3><%= cat.catTitle.trim() %></h3>
+            <% if(cat.sub_categories !== undefined){ %>
+                <ul class="nav nav-list">
+                    
+                <% cat.sub_categories.forEach(function(sub){ %>
+                    <li class="nav-header <%= sub.catID == selected_cat ? 'active' : '' %>">
+                        <a href="/category/<%= sub.catID %>" id="<%= sub.catID %>" class="subCatLabel active">
+                            <%= sub.catTitle.trim() %>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <% if(sub.sub_categories != undefined){ 
+                        sub.sub_categories.forEach(function(last){ %>
+                            <li class="<%= last.catID == selected_cat ? 'active' : '' %>">
+                                <a href="/category/<%= last.catID %>" class="subCatLink" id="<%last.catID %>">
+                                    <%= last.catTitle %>
+                                </a>
+                            </li>
+                    <% })
+                    }
+                }) 
+            } %>
+        </div>
+        <div class="span9">
+            <div id="itemContent">
+                <div class="itemList catDesc" id="sub_0">
+                    <h3><%= cat.catTitle.trim() %></h3>
+                    <div class="catContent">
+                        
+                        <% cat.content.forEach(function(content){ 
+                            if(content.type == 'CategoryBrief'){ %>
+                                <%- content.content %>
+                            <% }
+                         }) %>
+                    </div>
+                </div>
+                <% cat.sub_categories.forEach(function(sub){ %>
+                    <a class="article" href="/category/<%= sub.catID %>">
+                        <div style="padding-top:35px;"></div>
+                        <div class="lifestyleImg">
+                            <img src="<%= sub.image %>" alt="<%= sub.catTitle.trim() %>" />
+                        </div>
+                        <span><%= sub.catTitle %></span>
+                        <p style="width: 225px;top: -35px;position:relative;margin-left:10px;font-size:8pt;color: white">
+                            <%= cat.shortDesc %>
+                        </p>
+                    </a>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+<div>
