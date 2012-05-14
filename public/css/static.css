@@ -1,0 +1,39 @@
+h3{
+	margin: 10px 20px;
+}
+
+div.span2{
+	border-right: 1px solid #eaeaea;
+	margin-top: 20px;
+	min-height: 500px;
+}
+
+div.span2:last-child{
+	border-right:none;
+}
+
+div.span2 ul{
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+
+div.span2 ul li{
+	font-size: 14px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	padding: 5px 5px;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+div.span2 ul li:hover{
+	background: #eaeaea;
+	border-radius: 3px;
+}
+
+div.span2 ul li:hover a{
+	text-decoration:none;
+}
