@@ -1,7 +1,7 @@
 <!-- Category Display -->
 <% categories.forEach(function(cat){ %>
 	<a class="article" href="/category/<%= cat.catID %>">
-	    <img class="corner" src="/img/<%= cat.catTitle.trim().replace(" ","") %>Corner.png" />
+	    <img class="corner corner2" src="/img/<%= cat.catTitle.toLowerCase().trim().replace(" ","") %>Corner.png" />
 	    <div class="lifestyleImg">
 	        <img src="<%= cat.image %>" alt="<%= cat.catTitle.trim() %>">
 	    </div>
