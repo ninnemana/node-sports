@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="/css/static.css">
+<h3><%= message %></h3>
+<% columns.forEach(function(col){ %>
+	<div class="span2">
+		<ul>
+			<% col.forEach(function(opt){ %>
+				<li>
+					<a href="<%= next_page + opt %>" title="<%= opt %>"><%= opt %></a>
+				</li>
+			<% }) %>
+	</div>
+<% }) %>
+<div class="clearfix"></div>
