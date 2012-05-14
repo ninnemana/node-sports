@@ -5,11 +5,11 @@
 <div class="container-fluid">
     <div class="row-fluid">
         <div class="span3">
-            <h3><%= cat.catTitle.trim() %></h3>
-            <% if(cat.sub_categories !== undefined){ %>
+            <h3><%= category.catTitle.trim() %></h3>
+            <% if(category.sub_categories !== undefined){ %>
                 <ul class="nav nav-list">
                     
-                <% cat.sub_categories.forEach(function(sub){ %>
+                <% category.sub_categories.forEach(function(sub){ %>
                     <li class="nav-header <%= sub.catID == selected_cat ? 'active' : '' %>">
                         <a href="/category/<%= sub.catID %>" id="<%= sub.catID %>" class="subCatLabel active">
                             <%= sub.catTitle.trim() %>
@@ -31,10 +31,10 @@
         <div class="span9">
             <div id="itemContent">
                 <div class="itemList catDesc" id="sub_0">
-                    <h3><%= cat.catTitle.trim() %></h3>
+                    <h3><%= category.catTitle.trim() %></h3>
                     <div class="catContent">
                         
-                        <% cat.content.forEach(function(content){ 
+                        <% category.content.forEach(function(content){ 
                             if(content.type == 'CategoryBrief'){ %>
                                 <%- content.content %>
                             <% }
@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="itemList">
-                    <% cat.parts.forEach(function(item){ %>
+                    <% category.parts.forEach(function(item){ %>
                         <div class="item">
                             <h4><%= item.shortDesc%></h4>
                             <div class="titleImage">

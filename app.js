@@ -34,7 +34,15 @@ app.configure('production', function(){
 app.get('/', routes.index);
 app.get('/category/:id?',routes.category);
 app.get('/category/:id?/parts/:page?/:count?', routes.category_parts);
-app.post('/lookup', routes.lookup);
+app.get('/lookup/:mount?/:year?/:make?/:model?/:style?', routes.lookup);
+
+// Static Lookup
+app.get('/mount', routes.select_mount);
+app.get('/year/:mount?', routes.select_year);
+app.get('/make/:mount?/:year?', routes.select_make);
+app.get('/model/:mount?/:year?/:make?', routes.select_model);
+app.get('/style/:mount?/:year?/:make?/:model?', routes.select_style);
+
 
 app.listen(process.env.PORT || 3000);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

@@ -16,7 +16,7 @@
                 </a>
 
                 <div id="hitchInfo_link">
-                    <a href="/HitchInfo" target="_blank" title="Towing 101" rel="shadowbox">
+                    <a href="http://howto.curtmfg.com" target="_blank" title="Towing 101" rel="shadowbox">
                         <img src="/img/Towing-101.png" style="width: 205px;" />
                     </a>
                 </div>
@@ -41,13 +41,16 @@
                         <select name="style" id="style" disabled="disabled">
                             <option value="0">- Select Style -</option>
                         </select><img src="/img/ajax-spinner.gif" class="spinner" id="loaderStyle" />
+                        <noscript>
+                            <a href="/mount" title="Select Mount">Select Mount</a>
+                        </noscript>
                         <input type="image" disabled="disabled" alt="Search" name="btnSearch" id="btnSearch" src="/img/btnSearch.jpg" />
                     </form>
                 </div>
                 <img src="/img/home_BringIt_scaled.jpg" style="float:left;width:530px;margin-left: 10px;margin-top: 5px" />
                 <div style="clear:both"></div>
                 <div style="margin:auto;width: 100%;text-align:center;padding-bottom:5px">
-                    <% catList.forEach(function(catLink){ %>
+                    <% categories.forEach(function(catLink){ %>
                         <a href="/category/<%= catLink.catID %>">
                             <img src="/img/tabs/<%= catLink.catTitle.toLowerCase().trim().replace(' ', '') %>_tab.png" style="margin-right: 1px;width: 94px" />
                         </a>

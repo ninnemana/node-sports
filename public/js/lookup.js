@@ -9,6 +9,8 @@ $(document).ready(function () {
     $('.article p').css('margin','10px 5px 10px 5px').hide();
 
     document.getElementById('mount').selectedIndex = 0;
+    $('#main #header #lookup select').css('display','block');
+    $('#main #header #lookup input[type=image]').css('display','block');
     $('#year').html('<option value="0">- Select Year -</option>');
     $('#year').attr('disabled', 'disabled');
     $('#make').html('<option value="0">- Select Make -</option>');

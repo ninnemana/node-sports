@@ -1,9 +1,9 @@
 <!-- Category Display -->
-<% catList.forEach(function(cat){ %>
+<% categories.forEach(function(cat){ %>
 	<a class="article" href="/category/<%= cat.catID %>">
-	    <img class="corner" src="/img/<%= cat.catTitle.toLowerCase().trim().replace(" ","") %>Corner.png" />
+	    <img class="corner" src="/img/<%= cat.catTitle.trim().replace(" ","") %>Corner.png" />
 	    <div class="lifestyleImg">
-	        <img src="/img/<%= cat.catTitle.toLowerCase().trim().replace(" ","_") %>.png" alt="<%= cat.catTitle.trim() %>" />
+	        <img src="<%= cat.image %>" alt="<%= cat.catTitle.trim() %>">
 	    </div>
 	    <span><%= cat.catTitle %></span>
 	    <p style="width: 225px;top: -35px;position:relative;margin-left:10px;font-size:8pt;color: white">
